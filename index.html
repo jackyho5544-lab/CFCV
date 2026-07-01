@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>馮凱欣 Fung Hoi Yan — Film Portfolio</title>
+<meta name="description" content="馮凱欣 Fung Hoi Yan — 電影美術指導・製作・演出作品集" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&family=Noto+Serif+TC:wght@500;600;700&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f3f1ea; --paper2:#faf9f4; --ink:#18160f; --muted:#6d685c;
+    --line:#d8d3c6; --line2:#c4bdad; --accent:#b0522e;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);
+    font-family:'Inter','Noto Sans TC',sans-serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 34px}
+  .mono{font-family:'Space Mono',monospace;text-transform:uppercase;letter-spacing:.16em}
+  .serif{font-family:'Playfair Display','Noto Serif TC',serif}
+  .ital{font-family:'Playfair Display','Noto Serif TC',serif;font-style:italic;font-weight:500}
+
+  /* subtle paper grain */
+  body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.028;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+  /* NAV */
+  nav{position:fixed;inset:0 0 auto 0;z-index:100;background:rgba(243,241,234,.72);
+    backdrop-filter:saturate(150%) blur(10px);border-bottom:1px solid transparent;transition:.4s}
+  nav.scrolled{background:rgba(243,241,234,.92);border-bottom:1px solid var(--line)}
+  .nav-in{display:flex;align-items:center;justify-content:space-between;height:70px}
+  .brand{font-family:'Playfair Display',serif;font-size:18px;font-weight:600;letter-spacing:.02em}
+  .nav-links{display:flex;gap:34px}
+  .nav-links a{font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);transition:.25s;position:relative}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-links a::after{content:"";position:absolute;left:0;bottom:-5px;width:0;height:1px;background:var(--accent);transition:.3s}
+  .nav-links a:hover::after{width:100%}
+  @media(max-width:760px){.nav-links{display:none}}
+
+  /* HERO */
+  header.hero{padding:150px 0 70px;position:relative}
+  .hero-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:54px;align-items:end}
+  @media(max-width:900px){.hero-grid{grid-template-columns:1fr;gap:34px}}
+  .eyebrow{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);
+    display:flex;align-items:center;gap:12px;margin-bottom:30px}
+  .eyebrow::before{content:"";width:38px;height:1px;background:var(--accent)}
+  .hero h1{font-family:'Noto Serif TC','Playfair Display',serif;font-weight:700;
+    font-size:clamp(64px,11vw,150px);line-height:.9;letter-spacing:-.01em}
+  .hero .en{display:block;font-family:'Playfair Display',serif;font-weight:500;
+    font-size:clamp(22px,3.4vw,40px);letter-spacing:.02em;margin-top:18px;color:#2e2b22}
+  .hero .en em{font-style:italic;color:var(--accent)}
+  .hero .lead{margin-top:26px;max-width:520px;color:var(--muted);font-size:16.5px}
+  .hero-media{position:relative}
+  .hero-media .framebox{border:1px solid var(--line2);border-radius:3px;overflow:hidden;aspect-ratio:4/5;background:#111}
+  .hero-media iframe{width:100%;height:100%;border:0;transform:scale(1.35);pointer-events:none;display:block}
+  .hero-media .cap{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+    display:flex;justify-content:space-between;margin-top:12px}
+
+  .ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:60px;padding:16px 0;
+    display:flex;gap:52px;flex-wrap:wrap;font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .ticker b{color:var(--ink);font-weight:700}
+
+  /* SECTION */
+  section{padding:96px 0}
+  .shead{display:flex;align-items:baseline;gap:20px;margin-bottom:52px;border-bottom:1px solid var(--line);padding-bottom:20px}
+  .snum{font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.1em;color:var(--accent)}
+  .stitle{font-family:'Playfair Display','Noto Serif TC',serif;font-size:clamp(30px,5vw,52px);font-weight:600;line-height:1}
+  .ssub{margin-left:auto;font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);align-self:flex-end}
+  @media(max-width:640px){.ssub{display:none}}
+
+  /* ABOUT */
+  .about{font-family:'Playfair Display','Noto Serif TC',serif;font-weight:500;
+    font-size:clamp(22px,3.2vw,36px);line-height:1.5;max-width:1000px;color:#26231b}
+  .about em{font-style:italic;color:var(--accent)}
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:64px}
+  @media(max-width:720px){.facts{grid-template-columns:repeat(2,1fr)}}
+  .fact{border-top:1px solid var(--line2);padding-top:16px}
+  .fact .n{font-family:'Playfair Display',serif;font-size:clamp(34px,5vw,52px);font-weight:600;line-height:1}
+  .fact .l{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+
+  /* FEATURED */
+  .featured{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line2);border-radius:3px;overflow:hidden;margin-bottom:60px;background:var(--paper2)}
+  @media(max-width:820px){.featured{grid-template-columns:1fr}}
+  .featured .fimg{aspect-ratio:16/10;background:
+     radial-gradient(circle at 60% 40%,#e9dcc4,#d8c9ab);display:flex;align-items:center;justify-content:center;border-right:1px solid var(--line2)}
+  .featured .fimg .r{font-family:'Playfair Display',serif;font-style:italic;font-size:74px;color:#a07b45}
+  .featured .ftxt{padding:44px}
+  .featured .badge{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent);border-radius:2px;padding:5px 12px;display:inline-block;margin-bottom:20px}
+  .featured h3{font-family:'Playfair Display',serif;font-size:44px;font-weight:700;margin-bottom:8px}
+  .featured .fr{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+  .featured p{color:var(--muted);margin-bottom:26px;max-width:420px}
+  .lnk{font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--ink);padding-bottom:3px;transition:.3s}
+  .lnk:hover{color:var(--accent);border-color:var(--accent)}
+
+  .glabel{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:0 0 22px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:34px}
+  .card{opacity:0;transform:translateY(30px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+  .card.in{opacity:1;transform:none}
+  .thumb{position:relative;aspect-ratio:16/9;background:#111;overflow:hidden;border:1px solid var(--line2);cursor:pointer}
+  .thumb img{width:100%;height:100%;object-fit:cover;transition:.6s ease}
+  .thumb:hover img{transform:scale(1.05)}
+  .thumb.drive{background:repeating-linear-gradient(45deg,#e6ddcb,#e6ddcb 12px,#e0d6c1 12px,#e0d6c1 24px)}
+  .thumb .filmicon{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-style:italic;font-size:46px;color:#a99a7c}
+  .play{position:absolute;left:20px;bottom:20px;width:54px;height:54px;border-radius:50%;background:rgba(243,241,234,.9);
+    display:flex;align-items:center;justify-content:center;transition:.35s}
+  .thumb:hover .play{background:var(--accent);transform:scale(1.06)}
+  .play svg{width:18px;height:18px;fill:var(--ink);margin-left:2px;transition:.35s}
+  .thumb:hover .play svg{fill:#fff}
+  .thumb iframe{width:100%;height:100%;border:0;display:block}
+  .meta{padding:16px 2px 0}
+  .meta .rl{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:7px}
+  .meta h3{font-family:'Playfair Display','Noto Serif TC',serif;font-size:23px;font-weight:600}
+  .meta .src{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:5px}
+
+  /* CREDIT LIST */
+  .credits{margin-top:60px}
+  .credits h4{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin:36px 0 8px}
+  .crow{display:grid;grid-template-columns:28px 1fr auto;gap:18px;align-items:baseline;padding:18px 4px;border-bottom:1px solid var(--line);
+    opacity:0;transform:translateY(16px)}
+  .crow.in{opacity:1;transform:none;transition:.6s}
+  .crow .i{font-family:'Space Mono',monospace;font-size:11px;color:var(--muted)}
+  .crow .t{font-family:'Playfair Display','Noto Serif TC',serif;font-size:20px;font-weight:600}
+  .crow .r{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);text-align:right}
+
+  /* STAGE */
+  .stage{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:26px}
+  .scard{border:1px solid var(--line2);border-radius:3px;padding:28px;background:var(--paper2);opacity:0;transform:translateY(22px)}
+  .scard.in{opacity:1;transform:none;transition:.6s}
+  .scard .g{font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+  .scard .p{font-family:'Playfair Display','Noto Serif TC',serif;font-size:19px;font-weight:600;line-height:1.55}
+  .scard .r{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:12px}
+
+  /* CONTACT */
+  .contact{padding:120px 0}
+  .contact .big{font-family:'Playfair Display','Noto Serif TC',serif;font-size:clamp(40px,8vw,96px);font-weight:600;line-height:1}
+  .contact .big em{font-style:italic;color:var(--accent)}
+  .contact .row{display:flex;gap:20px 46px;flex-wrap:wrap;margin-top:40px;font-family:'Space Mono',monospace;font-size:13px;letter-spacing:.08em}
+  .contact .row a{border-bottom:1px solid var(--line2);padding-bottom:4px;transition:.3s}
+  .contact .row a:hover{color:var(--accent);border-color:var(--accent)}
+  footer{border-top:1px solid var(--line);padding:26px 0;font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+</style>
+</head>
+<body>
+
+<nav id="nav"><div class="wrap nav-in">
+  <div class="brand">馮凱欣 · Fung Hoi Yan</div>
+  <div class="nav-links">
+    <a href="#work">Works</a><a href="#about">About</a><a href="#stage">Stage</a><a href="#contact">Let's Talk</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="hero-grid">
+    <div>
+      <div class="eyebrow">Film Art Director · Performer</div>
+      <h1>馮凱欣</h1>
+      <span class="en">Fung Hoi Yan <em>— art director, filmmaker &amp; performer</em></span>
+      <p class="lead">於鏡頭前後皆有實戰經驗的電影創作人。專注美術指導與美術製作,兼具編劇、副導演、製片與演出。</p>
+    </div>
+    <div class="hero-media">
+      <div class="framebox">
+        <iframe src="https://www.youtube.com/embed/9Xk9Lw01SdU?autoplay=1&mute=1&loop=1&playlist=9Xk9Lw01SdU&controls=0&modestbranding=1&rel=0&playsinline=1&showinfo=0" allow="autoplay; encrypted-media" title="showreel"></iframe>
+      </div>
+      <div class="cap"><span>Selected · 未存在的我們</span><span>Art Direction</span></div>
+    </div>
+  </div>
+  <div class="ticker">
+    <span><b>Independent</b> · Film</span>
+    <span>Based in <b>Hong Kong</b></span>
+    <span>Since <b>2021</b></span>
+    <span><b>KMAFF</b> 2022 Selection</span>
+    <span>Trilingual · 粵 / 英 / 普</span>
+  </div>
+</div></header>
+
+<section id="about"><div class="wrap">
+  <div class="shead"><span class="snum">(01)</span><h2 class="stitle">關於 / About</h2><span class="ssub">Profile</span></div>
+  <p class="about">香港都會大學<em>創意寫作及電影藝術(榮譽)</em>畢業生,專注<em>電影美術指導</em>及美術製作,並具備編劇、副導演、製片與演出的全流程經驗。擁有<em>八年劇團</em>演出經歷,曾參演七部舞台劇。熟悉 DaVinci Resolve 剪接調色、收音調音、文案創作與美術設計,並善用生成式 AI 輔助構思與製作流程。</p>
+  <div class="facts">
+    <div class="fact"><div class="n">8</div><div class="l">Years in Theatre</div></div>
+    <div class="fact"><div class="n">20+</div><div class="l">Film Credits</div></div>
+    <div class="fact"><div class="n">7</div><div class="l">Stage Plays</div></div>
+    <div class="fact"><div class="n">2022</div><div class="l">KMAFF Selection</div></div>
+  </div>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <div class="shead"><span class="snum">(02)</span><h2 class="stitle">精選作品 / Selected Work</h2><span class="ssub">片可即場播放</span></div>
+
+  <div class="featured">
+    <div class="fimg"><div class="r">ROSA</div></div>
+    <div class="ftxt">
+      <span class="badge">★ Official Selection · KMAFF 2022</span>
+      <h3>羅莎 ROSA</h3>
+      <div class="fr">演員 Actor</div>
+      <p>入選 K-Music and Arts Film Festival (KMAFF) 2022 之短片作品。</p>
+      <a class="lnk" href="https://filmfreeway.com/ROSA190622" target="_blank" rel="noopener">於 FilmFreeway 觀看 ↗</a>
+    </div>
+  </div>
+
+  <p class="glabel">— 美術 · 製作 / Art Direction &amp; Production</p>
+  <div class="grid" id="grid-art"></div>
+
+  <p class="glabel" style="margin-top:56px">— 演出 / Acting</p>
+  <div class="grid" id="grid-act"></div>
+
+  <div class="credits">
+    <h4>其他作品 / Additional Credits</h4>
+    <div id="credit-list"></div>
+  </div>
+</div></section>
+
+<section id="stage"><div class="wrap">
+  <div class="shead"><span class="snum">(03)</span><h2 class="stitle">舞台演出 / Stage</h2><span class="ssub">Theatre</span></div>
+  <div class="stage" id="stage-grid"></div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+  <div class="shead"><span class="snum">(04)</span><h2 class="stitle">聯絡 / Contact</h2><span class="ssub">Let's create</span></div>
+  <div class="big">Let's make <em>something</em>.</div>
+  <div class="row">
+    <a href="mailto:cherryyan87@gmail.com">cherryyan87@gmail.com</a>
+    <a href="tel:+85254213338">+852 5421 3338</a>
+    <span style="color:var(--muted)">Hong Kong</span>
+  </div>
+</div></section>
+
+<footer><div class="wrap" style="display:flex;justify-content:space-between;width:100%;gap:10px;flex-wrap:wrap">
+  <span>© <span id="yr"></span> 馮凱欣 Fung Hoi Yan</span><span>Film Portfolio · Made in Hong Kong</span>
+</div></footer>
+
+<script>
+  const PLAY = '<span class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>';
+  const art = [
+    {t:'未存在的我們', r:'美術指導 Art Director', src:'yt', id:'9Xk9Lw01SdU'},
+    {t:'暗流湧動', r:'美術指導・編劇・收音', src:'yt', id:'bnOv2m2tH34'},
+    {t:'殊途', r:'副導演 Assistant Director', src:'yt', id:'UPzT4recwf4'},
+    {t:'畫·虛', r:'副導演・製片・梳化服', src:'drive', id:'1b4gZF6FssPt3hRejbpAh4wEz3QnLSIUf'},
+    {t:'汐', r:'美術・梳化服助理', src:'yt', id:'SCsAV7wJOQI'},
+  ];
+  const act = [
+    {t:'子午', r:'演員 Actor', src:'yt', id:'y-qv3WYB0so'},
+    {t:'審判空間', r:'演員 Actor', src:'yt', id:'-zkPBzJ_weo'},
+    {t:'街角微光', r:'演員 Actor', src:'drive', id:'1QklEkEr3T69zvtgJOIdkDV278oT65khz'},
+    {t:'禮物', r:'演員 Actor', src:'yt', id:'eZNiKVmL6d4'},
+    {t:'嶺南 SEN・Depression 短片', r:'演員 Actor', src:'drive', id:'1zQ7A_bDDsCA-cwjDh8GAiQsmCQY_Fv-c'},
+    {t:'東華三院 Smiling Heart 2022', r:'演員 Actor', src:'yt', id:'RZgAV-RIWkY'},
+  ];
+  const creditsArt = [
+    {t:'夜囚', r:'美術指導 Art Director'},{t:'關係有效期', r:'助理製片 Production Asst'},
+    {t:'Deliver蝠', r:'美術助理 Art Assistant'},{t:'弒父案', r:'美術助理 Art Assistant'},{t:'海島', r:'美術助理 Art Assistant'},
+  ];
+  const creditsAct = [
+    {t:'憑友', r:'演員 Actor'},{t:'第一天（演藝學院拍攝功課）', r:'演員 Actor'},{t:'TVB《我要瞓鬥》', r:'臨時演員 Background'},
+  ];
+  const stage = [
+    {g:'好 teen 戲 Teens Theatre', p:'《人魚之淚》(重演)・《摘仙》(重演)・《葬鯨魚的人》(重演)・《葬鯨魚的人 2》', r:'演員 Actor'},
+    {g:'伙約坊 2025 年度製作', p:'《請聽我說》', r:'演員 Actor'},
+    {g:'野孩子', p:'《Shiny Compact 有一日我成為了魔法少女》', r:'演員 Actor'},
+    {g:'英華書院周年戲劇晚會 2022', p:'《流離之書 2》', r:'化妝 Make-up'},
+  ];
+
+  function card(o){
+    const inner = o.src==='yt'
+      ? `<img loading="lazy" src="https://i.ytimg.com/vi/${o.id}/hqdefault.jpg" alt="${o.t}">`
+      : `<img loading="lazy" class="dthumb" src="https://drive.google.com/thumbnail?id=${o.id}&sz=w1000" alt="${o.t}">`;
+    return `<article class="card" data-src="${o.src}" data-id="${o.id}">
+      <div class="thumb">${inner}${PLAY}</div>
+      <div class="meta"><div class="rl">${o.r}</div><h3>${o.t}</h3>
+      <div class="src">${o.src==='yt'?'YouTube':'Google Drive'}</div></div></article>`;
+  }
+  document.getElementById('grid-art').innerHTML = art.map(card).join('');
+  document.getElementById('grid-act').innerHTML = act.map(card).join('');
+
+  document.querySelectorAll('img.dthumb').forEach(img=>img.addEventListener('error',()=>{
+    const th=img.closest('.thumb');th.classList.add('drive');
+    const ic=document.createElement('span');ic.className='filmicon';ic.textContent='▦';
+    th.insertBefore(ic,th.firstChild);img.remove();
+  }));
+
+  function block(title,arr,start){
+    return `<h4>${title}</h4>`+arr.map((o,i)=>
+      `<div class="crow"><span class="i">${String(start+i).padStart(2,'0')}</span><span class="t">《${o.t}》</span><span class="r">${o.r}</span></div>`).join('');
+  }
+  document.getElementById('credit-list').innerHTML =
+    block('美術 · 製作 / Art &amp; Production',creditsArt,1)+block('演出 / Acting',creditsAct,creditsArt.length+1);
+
+  document.getElementById('stage-grid').innerHTML = stage.map(o=>
+    `<div class="scard"><div class="g">${o.g}</div><div class="p">${o.p}</div><div class="r">${o.r}</div></div>`).join('');
+
+  document.querySelectorAll('.grid').forEach(g=>g.addEventListener('click',e=>{
+    const c=e.target.closest('.card');if(!c)return;
+    const url=c.dataset.src==='yt'
+      ? `https://www.youtube.com/embed/${c.dataset.id}?autoplay=1&rel=0&modestbranding=1`
+      : `https://drive.google.com/file/d/${c.dataset.id}/preview`;
+    const th=c.querySelector('.thumb');th.style.cursor='default';
+    th.innerHTML=`<iframe src="${url}" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>`;
+  }));
+
+  const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}}),{threshold:.12});
+  document.querySelectorAll('.card,.crow,.scard').forEach((el,i)=>{el.style.transitionDelay=(i%6*0.06)+'s';io.observe(el);});
+
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40));
+  document.getElementById('yr').textContent=new Date().getFullYear();
+</script>
+</body>
+</html>
